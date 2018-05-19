@@ -2,7 +2,7 @@ var keycount = 0;
 var start,end,time;
 var div = document.getElementById('div');
 var mystring = "Lorem ipsum dolor sit amet, sed do eiusmod tempor.";
-
+mystring = "abc.";
 var j=0;
 var flag = [];
 for(i=0;i<mystring.length;i++)
@@ -77,9 +77,11 @@ var reset = document.getElementById('reset');
 function res(){
   inp = "";
   input.value = "";
+  input.disabled = false;
   keycount = 0;
   start = 0;
-  j=0;
+  console.log(j);
+
   dupe = "";
   flag = [];
   for(i=0;i<div.children.length;i++)
@@ -87,11 +89,14 @@ function res(){
     div.children[i].className = "normal";
 
   }
-  input.disabled = false;
-  if(j==mystring.length)
 
-  document.getElementById('ec').children[0].textContent="";
+
+  if(j==mystring.length)
+{document.getElementById('ec').children[0].textContent="";
   console.log(document.getElementById('ec').children);
+
+}
+j=0;
 
 }
 reset.addEventListener('click', res);
